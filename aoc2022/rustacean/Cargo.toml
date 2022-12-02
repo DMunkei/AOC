@@ -1,0 +1,37 @@
+[package]
+name = "rustacean"
+version = "0.1.0"
+edition = "2021"
+
+
+[lib]
+name = "aoc"
+path = "src/lib.rs"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[[bin]]
+name = "day1"
+path = "src/day1.rs"
+
+[[bin]]
+name = "day2"
+path = "src/day2.rs"
+
+[[bin]]
+name = "day2_p2"
+path = "src/day2_p2.rs"
+
+[[bin]]
+name = "day3_p1"
+path = "src/day3_p1.rs"
+
+[[bin]]
+name = "day5"
+path = "src/day5.rs"
+
+[[bin]]
+name = "day6"
+path = "src/day6.rs"
+
+[dependencies]
+anyhow = "1.0.66"
