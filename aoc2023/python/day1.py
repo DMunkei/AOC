@@ -26,8 +26,8 @@ def find_digit(line, rev = False):
 
 def solve_part_2():
     res = 0
-    # for line in util.get_test_data(2):
-    for line in util.get_real_data(1,2):
+    for line in util.get_test_data(2):
+    # for line in util.get_real_data(1,2):
         first_digit = find_digit(line)
         rev_line = line[::-1]
         second_digit = find_digit(rev_line, True)
@@ -35,6 +35,22 @@ def solve_part_2():
         first_digit = 0
         second_digit = 0
     return res
+
+def solve_part_2v2():
+    numbers = [ "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" ]
+    res = 0
+    for line in util.get_test_data(2):
+        digits = []
+        for idx, c in enumerate(line):
+            if c.isdigit():
+                digits.append(c)
+            for dig, number in enumerate(numbers):
+                if line[idx:].startswith(number):
+                    digits.append(str(dig+1))
+        res += int(f"{digits[0]}{digits[-1]}") 
+    return res
+
+
 
 def solve_part_1():
     res = 0
@@ -45,5 +61,6 @@ def solve_part_1():
 
 
 print(solve_part_2())
+print(solve_part_2v2())
 # print(foo() - 53855)
 
